@@ -1,0 +1,50 @@
+﻿@using ExchangeRates.Models
+@model IndexViewModel
+
+@{
+    ViewData["Title"] = "index";
+}
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+<h1>Курс валют ЦБ</h1>
+
+<table class="table">
+    <tr>
+        <th>
+            <a asp-action="Index">ID</a>
+        </th>
+        <th>
+            <a asp-action="Index">NumCode</a>
+        </th>
+        <th>
+            <a asp-action="Index">CharCode</a>
+        </th>
+        <th>
+            <a asp-action="Index">Nominal</a>
+        </th>
+        <th>
+            <a asp-action="Index">Name</a>
+        </th> 
+        <th>
+            <a asp-action="Index">Value</a>
+        </th>
+        <th>
+            <a asp-action="Index">Previous</a>
+        </th>
+    </tr>
+    @foreach (Currency u in Model.Currencies)
+    {
+        <tr>
+            <td>@u.ID</td>
+            <td>@u.NumCode</td>
+            <td>@u.CharCode</td>
+            <td>@u.Nominal</td>
+            <td>@u.Name</td>
+            <td>@u.Value</td>
+            <td>@u.Previous</td>
+        </tr>
+    }
+</table>
+
+
+
+
